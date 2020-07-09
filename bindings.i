@@ -14,6 +14,8 @@ extern          void pinMode             (int pin, int mode) ;
 extern          void pullUpDnControl     (int pin, int pud) ;
 extern          int  digitalRead         (int pin) ;
 extern          void digitalWrite        (int pin, int value) ;
+extern unsigned int  digitalRead8        (int pin) ;
+extern          void digitalWrite8       (int pin, int value) ;
 extern          void pwmWrite            (int pin, int value) ;
 extern          int  analogRead          (int pin) ;
 extern          void analogWrite         (int pin, int value) ;
@@ -51,7 +53,7 @@ extern int wiringPiI2CWrite          (int fd, int data) ;
 extern int wiringPiI2CWriteReg8      (int fd, int reg, int data) ;
 extern int wiringPiI2CWriteReg16     (int fd, int reg, int data) ;
 extern int wiringPiI2CSetupInterface (const char *device, int devId) ;
-extern int wiringPiI2CSetup          (const int devId) ;
+extern int wiringPiI2CSetup          (const int devId, const char *device) ;
 
 // Header file WiringPi/wiringPi/wiringPiSPI.h
 int wiringPiSPIGetFd     (int channel) ;
@@ -94,7 +96,7 @@ extern int mcp23016Setup (const int pinBase, const int i2cAddress) ;
 // Header file WiringPi/wiringPi/mcp23016reg.h
 
 // Header file WiringPi/wiringPi/mcp23017.h
-extern int mcp23017Setup (const int pinBase, const int i2cAddress) ;
+extern int mcp23017Setup (const int pinBase, const int i2cAddress, const char* i2cBus) ;
 
 // Header file WiringPi/wiringPi/mcp23s08.h
 extern int mcp23s08Setup (const int pinBase, const int spiPort, const int devId) ;
